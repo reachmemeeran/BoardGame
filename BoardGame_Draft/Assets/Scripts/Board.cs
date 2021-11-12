@@ -18,8 +18,14 @@ public class Board : MonoBehaviour
     List<Node> m_allNodes = new List<Node>();
     public List<Node> AllNodes { get { return m_allNodes; } }
 
+    Node m_playerNode;
+    public Node PlayerNode { get { return m_playerNode; } }
+
+    PlayerMover m_player;
+
     void Awake()
     {
+        m_player = Object.FindObjectOfType<PlayerMover>().GetComponent<PlayerMover>();
         GetNodeList();
     }
 
@@ -33,5 +39,28 @@ public class Board : MonoBehaviour
     {
         Vector2 boardCoord = Utility.Vector2Round(new Vector2(pos.x, pos.z));
         return m_allNodes.Find(n => n.Coordinate == boardCoord);
+    }
+
+    public Node FindPlayerNode()
+    {
+        if (m_player != null && !m_player.isMoving)
+        {
+            return FindNodeAt(m_player.transform.position);
+        }
+        return null;
+    }
+
+    public void UpdatePlayerNode()
+    {
+        m_playerNode = FindPlayerNode();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(0f, 1f, 1f, 0.5f);
+        if (m_playerNode != null)
+        {
+            Gizmos.DrawSphere(m_playerNode.transform.position, 0.2f);
+        }
     }
 }
