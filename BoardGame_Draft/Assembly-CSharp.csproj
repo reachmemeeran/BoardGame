@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9877E7BF-205A-8A4B-46B1-E82E693F6867}</ProjectGuid>
+    <ProjectGuid>{A54AE07A-8374-9C43-00BD-CBDF738D1509}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,19 +47,20 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.11</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneOSX:2</UnityBuildTarget>
     <UnityVersion>2020.3.22f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Board.cs" />
     <Compile Include="Assets/Scripts/PlayerInput.cs" />
     <Compile Include="Assets/Scripts/PlayerManager.cs" />
+    <Compile Include="Assets/Scripts/Link.cs" />
     <Compile Include="Assets/Scripts/PlayerMover.cs" />
-    <Compile Include="Assets/Scripts/Board.cs" />
     <Compile Include="Assets/Scripts/Node.cs" />
     <Compile Include="Assets/Scripts/Utility.cs" />
-    <Compile Include="Assets/Scripts/Link.cs" />
+    <Compile Include="Assets/Scripts/Obstacle.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -677,7 +678,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{8A6BE489-D5B1-733D-5D48-541A9F238390}</Project>
+      <Project>{82A104C3-FC37-EA2C-DF51-2938E6B833A9}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
